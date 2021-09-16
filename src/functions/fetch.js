@@ -14,6 +14,7 @@ const fetch = (req, res) => {
 
     axios.post(rota, corpo, { headers: cabecalho })
         .then(ok => {
+            res.set(ok.headers)
             res.send(ok.data)
         })
         .catch(err => {
