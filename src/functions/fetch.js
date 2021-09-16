@@ -3,7 +3,7 @@ const axios = require('axios')
 const fetch = (req, res) => {
     const rota = req.params['0']
     const corpo = req.body
-    const headers = {
+    const cabecalho = {
         ...req.headers,
         host: '',
         'user-agent': '',
@@ -12,7 +12,7 @@ const fetch = (req, res) => {
 
     console.log('Requisicao para: ' + rota)
 
-    axios.post(rota, corpo, { headers })
+    axios.post(rota, corpo, { headers: cabecalho })
         .then(ok => {
             res.send(ok.data)
         })
