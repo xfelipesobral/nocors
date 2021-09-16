@@ -10,7 +10,7 @@ const fetch = (req, res) => {
         accept: '*/*'
     }
 
-    console.log('Requisicao para: ' + rota)
+    console.log('Requisicao para: ' + rota + ' - ' + new Date().toJSON())
 
     axios.post(rota, corpo, { headers: cabecalho })
         .then(ok => {

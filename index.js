@@ -6,7 +6,7 @@ const porta = 3301
 const app = express()
 
 app.use(express.json())
-app.use(cors({ origin: '*' }))
+app.use(cors({ origin: '*', exposedHeaders: '*' }))
 app.use('/', rotas)
 
 app.listen(porta, () => {
